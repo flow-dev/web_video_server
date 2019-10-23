@@ -21,7 +21,8 @@ PngStreamer::~PngStreamer()
 void PngStreamer::sendImage(const cv::Mat &img, const ros::Time &time)
 {
   std::vector<int> encode_params;
-  encode_params.push_back(CV_IMWRITE_PNG_COMPRESSION);
+  //encode_params.push_back(CV_IMWRITE_PNG_COMPRESSION);
+  encode_params.push_back(16);
   encode_params.push_back(quality_);
 
   std::vector<uchar> encoded_buffer;
@@ -63,7 +64,8 @@ PngSnapshotStreamer::~PngSnapshotStreamer()
 void PngSnapshotStreamer::sendImage(const cv::Mat &img, const ros::Time &time)
 {
   std::vector<int> encode_params;
-  encode_params.push_back(CV_IMWRITE_PNG_COMPRESSION);
+  //encode_params.push_back(CV_IMWRITE_PNG_COMPRESSION);
+  encode_params.push_back(16);
   encode_params.push_back(quality_);
 
   std::vector<uchar> encoded_buffer;
